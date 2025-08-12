@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0d0d0d, #1f1f1f, #3a3a3a);
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Header Styles */
+header.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 60px; /* Фиксированная высота для лого */
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+}
+
+nav a {
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav a:hover {
+    color: #00bcd4;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00bcd4;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.btn a {
+    padding: 12px 25px;
+    background-color: #00bcd4;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn a:hover {
+    background-color: #00a0c0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.hero-info {
+    width: 50%;
+    max-width: 600px;
+    padding-right: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-info h2 {
+    color: #00bcd4;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-info h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 30px 0;
+}
+
+.hero-info .btn {
+    background-color: #00bcd4;
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hero-info .btn:hover {
+    background-color: #00a0c0;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4);
+}
+
+.hero img {
+    width: 50%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .hero-info h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 0;
+    }
+    
+    .hero-info {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .hero img {
+        width: 80%;
+        position: static;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header.container {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+    .logo {
+        margin-bottom: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-info h1 {
+        font-size: 36px;
+    }
+    
+    .hero-info p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .hero-info h1 {
+        font-size: 32px;
+    }
+    
+    .hero-info h2 {
+        font-size: 20px;
+    }
+    
+    .hero img {
+        width: 100%;
+    }
+}
